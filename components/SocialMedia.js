@@ -20,19 +20,20 @@ export const SocialMedia = () => {
     <Stack direction="row" justifyContent={"center"}>
       {socialMedia.map((social) => {
         return (
-          <>
-            <IconButton
-              sx={`& svg {
+          <IconButton
+            key={social.link}
+            target="_blank"
+            href={social.link}
+            sx={`& svg {
                   color:white;
                   font-size:3rem;
                   &:hover{
                     color:${theme.palette.primary[200]}
                   }
               }`}
-            >
-              {social.icon}
-            </IconButton>
-          </>
+          >
+            {social.icon}
+          </IconButton>
         );
       })}
     </Stack>
